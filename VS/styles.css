@@ -1,0 +1,335 @@
+/* Variables de base : evite les répétitions de couleurs et de styles (hei kanns de generell Saachen ¨nneren ouni emmer mussen se eenzel siichen ze goen) */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --card-bg: rgba(255, 255, 255, 0.95); /* Fond des boîtes de contenu */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre principale */
+    --small-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    --transition: all 0.3s ease; /* Transition pour les animations */
+    --nav-bg: #b8d8e9; /* Couleur de fond de la navigation */
+    --nav-active: #3498db; /* Couleur active pour les liens de navigation */
+    --header-bg: rgba(113, 203, 239, 0.363); /* Fond de l'en-tête */
+}
+
+/* Réglages globaux */
+html {
+    scroll-behavior: smooth; /* Défilement fluide lors des clics sur les ancres */
+    scroll-padding-top: 100px; /* Marge pour navigation sticky de la barre de navigation */
+}
+
+body {
+    background: var(--background-color); /* Fond de la page */
+    color: var(--text-color); /* Couleur du texte */
+    font-family: 'Roboto', sans-serif; /* Police de caractères */
+    line-height: 1.6; /* Hauteur de ligne */
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Éléments de texte personnalisés */
+text {
+    font-family: 'Roboto', sans-serif; 
+    text-align: justify; /* justify signifie que le texte est justifié (aligné à gauche et à droite) */
+    display: block; /* block signifie que le texte est un bloc (un paragraphe) */
+    line-height: 1.8; 
+}
+
+titre_txt {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    display: block;
+    font-size: 1.4rem; /* rem signifie que la taille de la police est relative à la taille de la police de base (16px) */
+    font-weight: 700; /* la valeur est une valeur numérique qui définit la densité de la police (plus la valeur est élevée, plus la police est dense) */
+    color: var(--primary-color);
+    margin: 1.5rem 0;
+}
+
+/* En-tête */
+header {
+    background: var(--header-bg);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    display: flex; /* flex signifie que le contenu est un conteneur flexible (on peut placer les éléments dans le conteneur de différentes manières) */
+    align-items: center; 
+    justify-content: space-between; /* space-between signifie que les éléments sont placés à gauche et à droite du conteneur */
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+header h1 {
+    font-weight: 700; 
+    text-align: center;
+    flex-grow: 1; /* flex-grow signifie que l'élément prend toute la largeur disponible, la valeur est une valeur numérique qui définit la densité de l'élément (plus la valeur est élevée, plus l'élément est dense) */
+    font-size: 1.8rem;
+    margin: 0 2rem;
+    color: var(--primary-color);
+}
+
+/* Navigation */
+.navbar { /* navbar signifie que l'élément est une barre de navigation */
+    background-color: var(--nav-bg);
+    padding: 0; /* padding signifie que l'élément a un espace intérieur (on peut définir la valeur en pixels ou en pourcentage) */
+    width: 70%; /* width signifie que la largeur de l'élément est de 70% de la largeur de son conteneur parent */
+    max-width: 600px;
+    margin: 0 auto 1rem; 
+    border-radius: 50px; 
+    box-shadow: var(--shadow);
+    position: sticky; /* position signifie que l'élément est positionné par rapport à son conteneur parent */
+    top: 1rem;
+    z-index: 1000; /* z-index signifie que l'élément est positionné par rapport à son conteneur parent */
+}
+
+.navbar ul { /* ul signifie que l'élément est une liste non ordonnée */
+    list-style: none;
+    margin: 0;
+    padding: 0.2rem;
+    display: flex; 
+    justify-content: space-around; /* space-around aligne les éléments par rapport à l'axe princpal de la ligne actuelle du conteneur flexible */
+    align-items: center;
+    width: 100%;
+}
+
+.navbar li { /* li signifie que l'élément est un élément de liste */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar a { /* a signifie que l'élément est un lien */
+    color: var(--primary-color);
+    text-decoration: none; /* signifie que le lien n'a pas de décoration (pas de soulignement) */
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    transition: var(--transition);
+    font-weight: 500;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.navbar a.active { /* active signifie que l'élément est actif wanns de op enger seit bass ass dei active an den text gett sou gewiesen */
+    background-color: var(--nav-active);
+    color: white;
+    box-shadow: var(--small-shadow);
+}
+
+.navbar a:hover { /* hover signifie que l'élément est survolé */
+    background-color: var(--nav-active);
+    color: white;
+    opacity: 0.9;
+}
+
+/* Conteneurs de contenu */
+.content-box, .dataviz-content-box { /* content-box signifie que l'élément est un conteneur de contenu (white boxes) */
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    padding: 2rem 2.5rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 1600px;
+    width: calc(100% - 4rem);
+    box-sizing: border-box; /* border-box signifie que la largeur et la hauteur de l'élément incluent le padding et le border, mais pas le margin */
+    transition: var(--transition);
+}
+
+/* Titres et textes */
+.content-box h2, .dataviz-content-box h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.content-box p, .dataviz-content-box p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.content-box h3, .dataviz-content-box h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Images */
+.image-fac {
+    width: auto;
+    height: 60px;
+}
+
+.image-master {
+    width: 150px;
+    height: auto;
+}
+
+.image-infographie, .image-drapeau, .image-timeline {
+    margin: 2rem auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.image-infographie {
+    width: 80%;
+    height: auto;
+}
+
+.image-drapeau {
+    width: 50%;
+    height: auto;
+}
+
+.image-timeline {
+    width: 80%;
+    height: auto;
+}
+
+/* Carte interactive */
+#mapid {
+    height: 600px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--small-shadow);
+    margin: 1rem 0;
+    background-color: #f8f9fa;
+}
+
+#map-section h2 { 
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#map-section p { 
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Conteneurs pour visualisations */
+.dataViz-container {
+    width: 100%;
+    height: 600px;
+    min-width: 400px;
+    margin: 0 auto; /* 0 represente la valeur de la marge en haut et en bas, auto represente la valeur de la marge en gauche et en droite */
+    overflow: hidden; /* hidden signifie que le contenu depassant de la largeur de l'élément est masqué */
+    position: relative; /* relative signifie que l'élément est positionné par rapport à son conteneur parent */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: var(--small-shadow);
+}
+
+/* Contrôles de carte */
+.slider-control {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#year-slider {
+    width: 150px;
+    margin: 5px 0;
+}
+
+/* Légende */
+.info.legend {
+    background-color: white;
+    opacity: 0.88;
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.info.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* Grille pour graphiques */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    width: 100%;
+}
+
+.grid-item {
+    background: transparent;
+    width: 100%;
+    min-width: 400px;
+}
+
+/* Pied de page */
+Footer {
+    background: var(--header-bg);
+    box-shadow: var(--shadow);
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+text_footer {
+    color: var(--text-color);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+text_footer span {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+/* Sources */
+.sources-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    position: relative;
+}
+
+.sources-container::before {
+    content: "Sources:";
+    font-weight: 600;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+text_footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+text_footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}

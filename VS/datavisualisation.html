@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Datavisualisation - Etudiants au Royaume-Uni</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+       <!-- Header de la page avec Titre et logos -->
+        <header>
+            <img src="../images/logo_fac.png" class="image-fac">
+            <h1>Les étudiants au Royaume-Uni en provenance de l'Union européenne</h1>
+            <img src="../images/master.png" class="image-master">
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="../main.html">Introduction</a></li>
+                <li><a href="cartographie.html">Cartographie</a></li>
+                <li><a href="datavisualisation.html" class="active">Datavisualisation</a></li>
+                <li><a href="infographie.html">Infographie</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteneur principal pour toutes les visualisations -->
+        <div class="dataviz-content-box">
+            <!-- Introduction explicative des graphiques -->
+            <section id="TextDataViz">
+                <h2>Datavisualisations sur le nombre des étudiants dans les quatre pays du Royaume-Uni</h2>
+                <p>Évolution du nombre des étudiants de l'Union européenne par pays d'études supérieures au Royaume-Uni.
+                Les visualisations permettent de voir une hiérarchie des pays en termes de nombre d'étudiants, avec le choix d'une visualisation descendante 
+                (donc du pays avec le plus d'étudiants vers celui avec le nombre le moins élevé) ou une visualisation ascendante (donc du pays avec le moins d'étudiants vers celui avec le plus élevé).</p>
+            </section>
+    
+            <!-- Disposition en grille des 4 graphiques (2x2) -->
+            <div class="grid-container">
+                <!-- Angleterre - Graphique course de barres -->
+                <div class="grid-item">
+                    <div class="dataViz-container">
+                        <!-- Intégration Flourish - graphique Angleterre -->
+                        <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/21862326">
+                            <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Pays de Galles - Graphique course de barres -->
+                <div class="grid-item">  
+                    <div class="dataViz-container">
+                        <!-- Intégration Flourish - graphique Pays de Galles -->
+                        <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/22009411">
+                            <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ecosse - Graphique course de barres -->
+                <div class="grid-item">
+                    <div class="dataViz-container">
+                        <!-- Intégration Flourish - graphique Ecosse -->
+                        <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/22009431">
+                            <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Irlande du Nord - Graphique course de barres -->
+                <div class="grid-item">
+                    <div class="dataViz-container">
+                        <!-- Intégration Flourish - graphique Irlande du Nord -->
+                        <div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/22010316">
+                            <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer de la page -->
+        <Footer>
+            <text_footer>
+                <span>THILL Ella (M1 OTG) - Université de Strasbourg - 2025</span>
+                <div class="sources-container">
+                    <a href="https://www.destatis.de/Europa/EN/Country/EU-Member-States/_EU_EZ_Zeitverlauf_en.html">©2020 DEStatis</a>
+                    <a href="https://www.hesa.ac.uk/data-and-analysis/students/where-from">©2025 HESA</a>
+                    <a href="https://www.researchgate.net/publication/353200264_The_Beginnings_of_Modern_Higher_Education_in_England">©2021 G. M. Lica</a>
+                    <a href="https://european-union.europa.eu/index_fr">©2025 Union européenne</a>
+                </div>
+            </text_footer>
+        </Footer>
+    </body>
+</html> 
